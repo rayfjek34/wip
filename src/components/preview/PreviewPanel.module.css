@@ -1,0 +1,129 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-3);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Toolbar ─────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.templateTabs {
+  display: flex;
+  gap: 0.2rem;
+  background: var(--bg-3);
+  padding: 3px;
+  border-radius: var(--radius);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.tab:hover { background: var(--surface); color: var(--text); }
+.tabActive {
+  background: var(--surface) !important;
+  color: var(--accent) !important;
+  box-shadow: 0 1px 4px var(--shadow);
+}
+.tabIcon { font-size: 0.85em; }
+
+/* ── Zoom controls ───────────────── */
+.zoomRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.zoomBtn {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-2);
+  font-size: 1rem;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+  padding: 0;
+}
+.zoomBtn:hover:not(:disabled) { background: var(--border); color: var(--text); }
+.zoomBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+.zoomLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-3);
+  min-width: 32px;
+  text-align: center;
+}
+
+/* ── Preview scroll area ─────────── */
+.previewScroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── A4 page ─────────────────────── */
+.pageWrap {
+  width: 210mm;
+  background: white;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.12),
+    0 8px 32px rgba(0,0,0,0.14),
+    0 0 0 1px rgba(0,0,0,0.04);
+  border-radius: 2px;
+  flex-shrink: 0;
+  transform-origin: top center;
+  /* marginBottom is set inline to compensate for scale */
+}
+
+/* ── Empty state ─────────────────── */
+.emptyState {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-3);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  pointer-events: none;
+  z-index: 1;
+}
+.emptyIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  animation: pulse 2s ease infinite;
+}

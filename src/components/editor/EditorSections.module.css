@@ -1,0 +1,163 @@
+.entry {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  position: relative;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entryNum {
+  background: var(--accent-light);
+  color: var(--accent);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-3);
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+.removeBtn:hover { background: var(--error); color: white; }
+
+.addBtn {
+  background: none;
+  border: 1px dashed var(--border-2);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  width: 100%;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.addBtn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+.addSectionBtn {
+  background: none;
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: background 0.15s;
+}
+.addSectionBtn:hover { background: var(--accent-light); }
+
+.checkField {
+  display: flex;
+  align-items: center;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-2);
+  gap: 0.4rem;
+}
+.checkField label { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; }
+
+/* Skills / Languages / Interests chips */
+.chipGrid { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.chipEntry {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chipInput {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  transition: border-color 0.15s;
+}
+.chipInput:focus { outline: none; border-color: var(--accent); }
+
+.chipSelect {
+  padding: 0.5rem 0.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.chipSelect:focus { outline: none; border-color: var(--accent); }
+
+.chipRemove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+.chipRemove:hover { background: var(--error); color: white; }
+
+/* Photo upload */
+.photoRow {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.photoPreview {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius);
+  border: 2px dashed var(--border-2);
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+.photoPreview:hover { border-color: var(--accent); }
+
+.photoImg { width: 100%; height: 100%; object-fit: cover; }
+
+.photoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--text-3);
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+.photoPlaceholder span { font-size: 1.5rem; }

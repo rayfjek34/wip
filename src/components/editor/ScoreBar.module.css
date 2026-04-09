@@ -1,0 +1,109 @@
+.wrap {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.header:hover { background: var(--surface-2); }
+
+.left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.scoreNum {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.scoreNum[data-color="great"] { color: var(--success); }
+.scoreNum[data-color="good"]  { color: #e0a020; }
+.scoreNum[data-color="low"]   { color: var(--text-3); }
+
+.scoreLabel {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+.barWrap { flex: 1; }
+
+.bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+.fill[data-color="great"] { background: var(--success); }
+.fill[data-color="good"]  { background: #e0a020; }
+.fill[data-color="low"]   { background: var(--border-2); }
+
+.tipBtn {
+  background: none;
+  border: none;
+  font-size: 0.72rem;
+  color: var(--text-3);
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+.tipBtn:hover { background: var(--bg-3); color: var(--text); }
+
+.tips {
+  padding: 0.6rem 1.25rem 0.75rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  animation: fadeIn 0.2s ease;
+}
+
+.tipsLabel {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+}
+
+.tipsList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+}
+
+.tipsList li {
+  font-size: 0.78rem;
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tipDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  display: inline-block;
+}
